@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated, User
 from bot import Bot
 from config import *
 from helper_func import subscribed, encode, decode, get_messages
-from database.db import add_user, del_user, full_userbase, present_user
+from database.database import add_user, del_user, full_userbase, present_user
 from pyrogram.types import Message
 
 GenAnime = FILE_AUTO_DELETE
@@ -80,7 +80,7 @@ async def start_command(client: Client, message: Message):
                 pass
 
         k = await client.send_message(chat_id=message.from_user.id, 
-                                      text=f"<b>⚠️ Wᴀʀɴɪɴɢ ⚠️\n\nTʜᴇsᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Aᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ Iɴ 2Hᴏᴜʀs. Fᴏʀᴡᴀʀᴅ Tʜᴇsᴇ Mᴇssᴀɢᴇs...!</b>")
+                                      text=f"<b>⚠️ Wᴀʀɴɪɴɢ ⚠️\n\nTʜᴇsᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Aᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ Iɴ 10Mɪɴ. Fᴏʀᴡᴀʀᴅ Tʜᴇsᴇ Mᴇssᴀɢᴇs...!</b>")
 
         # Schedule the file deletion
         asyncio.create_task(delete_files(genanime_msg, client, k))
@@ -90,8 +90,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url = "t.me/genanimeofc"),
-                    InlineKeyboardButton("🍁 ʀᴀɴᴅᴏᴍ", url = "t.me/ds_animex")
+                    InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url="t.me/Anime_Movies_Hindi_Dub_India"),
+                    InlineKeyboardButton("🍁 ᴏᴡɴᴇʀ", url="t.me/Shikamaru_Naru")
                 ],
                 [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
@@ -116,12 +116,12 @@ async def start_command(client: Client, message: Message):
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+zYmhcRCMbQwyNDBl"),
             InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
         ],
         [
             InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+rF_oLkr8wgg4ZDc1"),
         ]
     ]
     try:
