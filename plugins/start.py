@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated, User
 from bot import Bot
 from config import *
 from helper_func import subscribed, encode, decode, get_messages
-from database.database import add_user, del_user, full_userbase, present_user
+from database.db import add_user, del_user, full_userbase, present_user
 from pyrogram.types import Message
 
 GenAnime = FILE_AUTO_DELETE
