@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated, User
 from bot import Bot
 from config import *
 from helper_func import subscribed, encode, decode, get_messages
-from database.db import add_user, del_user, full_userbase, present_user
+from database.database import add_user, del_user, full_userbase, present_user
 from pyrogram.types import Message
 
 GenAnime = FILE_AUTO_DELETE
@@ -79,8 +79,8 @@ async def start_command(client: Client, message: Message):
                 print(f"Failed to send message: {e}")
                 pass
 
-      #  k = await client.send_message(chat_id=message.from_user.id, 
-                                   #   text=f"<b>⚠️ Wᴀʀɴɪɴɢ ⚠️\n\nTʜᴇsᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Aᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ Iɴ 2Hᴏᴜʀs. Fᴏʀᴡᴀʀᴅ Tʜᴇsᴇ Mᴇssᴀɢᴇs...!</b>")
+        k = await client.send_message(chat_id=message.from_user.id, 
+                                      text=f"<b>⚠️ Wᴀʀɴɪɴɢ ⚠️\n\nTʜᴇsᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Aᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ Iɴ 60Mɪɴ. Fᴏʀᴡᴀʀᴅ Tʜᴇsᴇ Mᴇssᴀɢᴇs...!</b>")
 
         # Schedule the file deletion
         asyncio.create_task(delete_files(genanime_msg, client, k))
@@ -90,8 +90,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url = "t.me/genanimeofc"),
-                    InlineKeyboardButton("🍁 ʀᴀɴᴅᴏᴍ", url = "t.me/ds_animex")
+                    InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url='https://t.me/HKB_MOVIES'),
                 ],
                 [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
@@ -117,11 +116,11 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+OqpZS095DvczNjc1"),
         ],
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+AYMBa7n9SBcyYWU1"),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+JcdmH0e7KqYzNTRl"),
         ]
     ]
     try:
@@ -225,4 +224,4 @@ async def delete_files(messages, client, k):
         keyboard = None
 
     # Edit message with the button
- #   await k.edit_text("<b>Yᴏᴜʀ Vɪᴅᴇᴏ / Fɪʟᴇ Is Sᴜᴄᴄᴇssғᴜʟʟʏ Dᴇʟᴇᴛᴇᴅ ✅</b>", reply_markup=keyboard)
+    await k.edit_text("<b>Yᴏᴜʀ Vɪᴅᴇᴏ / Fɪʟᴇ Is Sᴜᴄᴄᴇssғᴜʟʟʏ Dᴇʟᴇᴛᴇᴅ ✅</b>", reply_markup=keyboard)
