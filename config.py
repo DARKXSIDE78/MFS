@@ -15,7 +15,7 @@ CHANNEL_ID = os.environ.get("CHANNEL_ID", "@paidfilebotdb")
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "DARKXSIDE78")
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "7086472788"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "5566741045"))
 #Port
 PORT = os.environ.get("PORT", "8030")
 #Database
