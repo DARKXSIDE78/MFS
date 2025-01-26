@@ -5,7 +5,7 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6972029110:AAE7p6rF7fCwXjruQCn_dXXB59HOGlgzBNU")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7782349339:AAFAYh6thXZxakCx4tqQiTjBuFKLHAxqGS8")
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "17417255"))
 #Your API Hash from my.telegram.org
@@ -17,15 +17,15 @@ OWNER = os.environ.get("OWNER", "DARKXSIDE78")
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "7086472788"))
 #Port
-PORT = os.environ.get("PORT", "8030")
+PORT = os.environ.get("PORT", "8000")
 #Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKXSIDE78@cluster0.wdive.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "unknown")
+DB_NAME = os.environ.get("DATABASE_NAME", "CulxRobot")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@Flower_And_Asura_Dub")
 FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@FusionAnime")
-FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@HeroOrganizationManga")
+FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@FraxxManga)
 FORCE_SUB_CHANNEL4 = os.environ.get("FORCE_SUB_CHANNEL4", "@GenAnimeOfc")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
