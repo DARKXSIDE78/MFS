@@ -23,9 +23,11 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKX
 DB_NAME = os.environ.get("DATABASE_NAME", "MovieCollab")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@AnimePFP_HKB")
-#FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@HKB_MOVIES")
-#FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", None)
+FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@The_Last_Attack_AOT")
+FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@Reze_Arc_Movie_Chainsaw_Man")
+FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@Infinity_Castle_Demon_Slayer")
+FORCE_SUB_CHANNEL4 = os.environ.get("FORCE_SUB_CHANNEL4", "-1002264157428")
+FORCE_SUB_CHANNEL5 = os.environ.get("FORCE_SUB_CHANNEL5", "-1002342192554")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
