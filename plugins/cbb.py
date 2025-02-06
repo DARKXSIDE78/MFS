@@ -9,11 +9,11 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text = (
-    "<b>○ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/Darkxside78'>DARKXSIDE78</a>\n"
+    "<b>○ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/Blakite_Ravii'>Bʟᴀᴋɪᴛᴇ Rᴀᴠɪ</a>\n"
     "○ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/downloads/'>Pʏᴛʜᴏɴ</a>\n"
     "○ Lɪʙʀᴀʀʏ: <a href='https://github.com/pyrogram/pyrogram'>Pʏʀᴏɢʀᴀᴍ</a>\n"
-    "○ Mᴀɪɴ Cʜᴀɴɴᴇʟ: <a href='https://t.me/hkb_movies'>Hᴋʙ Mᴏᴠɪᴇs</a>\n"
-    "○ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ: <a href='https://t.me/+xp9acqFgosQ5NjNl'>Bᴏᴛ Cʜᴀɴɴᴇʟ</a></b>"
+    "○ Mᴀɪɴ Cʜᴀɴɴᴇʟ: <a href='https://t.me/nineanimeofficial'>9Aɴɪᴍᴇ</a>\n"
+    "○ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ: <a href='https://t.me/nineanimeofficial'>Bᴏᴛ Cʜᴀɴɴᴇʟ</a></b>"
 ),
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
@@ -30,7 +30,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url= "https://t.me/HKB_MOVIES"),
+                        InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url= "https://t.me/nineanimeofficial"),
                     ],
                     [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
