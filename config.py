@@ -23,7 +23,7 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKX
 DB_NAME = os.environ.get("DATABASE_NAME", "Paid")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@diamond_dubber_official")
+FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@Ongoing_Adda)
 FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@diamond_dubber_official")
 FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@solo_leveling_reawakening_hindi0")
 
