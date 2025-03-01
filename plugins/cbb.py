@@ -30,7 +30,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url= "https://t.me/genanimeofc"),
+                        InlineKeyboardButton("⚡️ Dᴏᴍᴀɪɴ", url= "https://t.me/genanimeofc"),
                     ],
                     [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
