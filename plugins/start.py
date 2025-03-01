@@ -90,8 +90,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡️ ᴍᴀɪɴ ʜᴜʙ", url = "t.me/genanimeofc"),
-                    InlineKeyboardButton("🍁 ʀᴀɴᴅᴏᴍ", url = "t.me/ds_animex")
+                    InlineKeyboardButton("⚡️ ᴅᴏᴍᴀɪɴ", url = "t.me/genanimeofc"),
+                    InlineKeyboardButton("🍁 ʜɪɴᴅɪ ᴅᴏᴍᴀɪɴ", url = "t.me/Crunchyroll_Anime_India")
                 ],
                 [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
@@ -116,12 +116,12 @@ async def start_command(client: Client, message: Message):
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ", url=client.invitelink2),
+            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ [ʙᴀᴄᴋᴜᴘ]", url=client.invitelink1),
         ],
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
+            InlineKeyboardButton(text="Cʀᴜɴᴄʜʏʀᴏʟʟ Aɴɪᴍᴇ Iɴᴅɪᴀ", url=client.invitelink3),
+            #InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
         ]
     ]
     try:
