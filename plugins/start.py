@@ -91,7 +91,7 @@ async def start_command(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton("⚡️ ᴅᴏᴍᴀɪɴ", url = "t.me/genanimeofc"),
-                    InlineKeyboardButton("🍁 ʜɪɴᴅɪ ᴅᴏᴍᴀɪɴ", url = "t.me/Crunchyroll_Anime_India")
+                    InlineKeyboardButton("🍁 ᴅᴏᴍᴀɪɴ", url = "t.me/Crunchyroll_Anime_India")
                 ],
                 [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
@@ -117,7 +117,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ", url=client.invitelink2),
-            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ [ʙᴀᴄᴋᴜᴘ]", url=client.invitelink1),
+            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ [ʙᴀᴄᴋᴜᴘ]", url=client.invitelink),
         ],
         [
             InlineKeyboardButton(text="Cʀᴜɴᴄʜʏʀᴏʟʟ Aɴɪᴍᴇ Iɴᴅɪᴀ", url=client.invitelink3),
