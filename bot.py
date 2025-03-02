@@ -9,6 +9,24 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, FORCE_SUB_CHANNEL2, FORCE_SUB_CHANNEL3, FORCE_SUB_CHANNEL4
 
+import asyncio
+import aiohttp
+
+URL = "frail-darya-geniusboi07-2c1562c3.koyeb.app/"  # Replace with your koyeb app link...
+
+async def ping():
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                async with session.get(URL) as response:
+                    print(f"Pinged server, status: {response.status}")
+            except Exception as e:
+                print(f"{e}")
+            await asyncio.sleep(600)
+
+loop = asyncio.get_event_loop()
+loop.create_task(ping())
+
 
 class Bot(Client):
     def __init__(self):
