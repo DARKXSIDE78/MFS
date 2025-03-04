@@ -26,7 +26,6 @@ DB_NAME = os.environ.get("DATABASE_NAME", "Diablo")
 FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@GenAnimeHindi")
 FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@GenAnimeOfc")
 FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@Crunchyroll_Anime_India")
-FORCE_SUB_CHANNEL4 = os.environ.get("FORCE_SUB_CHANNEL4", "@GenAnimeOfc")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -39,7 +38,7 @@ FORCE_PIC = os.environ.get("FORCE_PIC", "https://wallpapercave.com/wp/wp8857060.
 START_MSG = os.environ.get("START_MESSAGE", "<b>ғᴏᴏʟɪsʜ ᴍᴏʀᴛᴀʟ!!! [{first}]\nʏᴏᴜ sᴛᴀɴᴅ ɪɴ ᴛʜᴇ ᴘʀᴇsᴇɴᴄᴇ ᴏғ ᴛʜᴇ Dᴇᴍᴏɴ Lᴏʀᴅ, ᴛʜᴇ ᴏɴᴇ ᴡʜᴏ sᴇʀᴠᴇs ᴛʜᴇ ᴀʟᴍɪɢʜᴛʏ Mᴀsᴛᴇʀ <a href='t.me/darkxside78'>DARKXSIDE</a>. ʜɪs ᴡɪʟʟ ɪs ᴀʙsᴏʟᴜᴛᴇ, ʜɪs ᴅᴏᴍɪɴɪᴏɴ ᴜɴǫᴜᴇsᴛɪᴏɴᴀʙʟᴇ.\nɪ ᴀᴍ ᴛʜᴇ ᴏɴᴇ ᴇɴᴛʀᴜsᴛᴇᴅ ᴡɪᴛʜ ʜɪs sᴀᴄʀᴇᴅ ᴀʀᴄʜɪᴠᴇs, ᴛʜᴇ ᴋᴇᴇᴘᴇʀ ᴏғ ʜɪs ғᴏʀʙɪᴅᴅᴇɴ ᴋɴᴏᴡʟᴇᴅɢᴇ. ʏᴏᴜ sʜᴀʟʟ ɴᴏᴛ ʟᴀʏ ʜᴀɴᴅs ᴜᴘᴏɴ ᴡʜᴀᴛ ɪs ʜɪs ᴜɴʟᴇss ᴍʏ ᴍᴀsᴛᴇʀ ʙᴇsᴛᴏᴡs ᴜᴘᴏɴ ʏᴏᴜ ᴛʜᴇ ᴅɪᴠɪɴᴇ sᴘᴇʟʟ—ʜɪs sᴀᴄʀᴇᴅ ʟɪɴᴋs.\n\nᴋɴᴇᴇʟ, ᴏʙᴇʏ, ᴀɴᴅ ᴀᴡᴀɪᴛ ʜɪs ᴄᴏᴍᴍᴀɴᴅ.</b>")
 try:
     ADMINS=[6376328008]
-    for x in (os.environ.get("ADMINS", "6302971969 7086472788").split()):
+    for x in (os.environ.get("ADMINS", "6302971969").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
