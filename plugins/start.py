@@ -114,38 +114,65 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    buttons = [
-        [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
-        ],
-        [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url='https://t.me/+dT69h1k0uzYwY2Fk'),
-        ]
+    # Define channels (update IDs in config.py)
+    force_sub_channels = [
+        {"id": FORCE_SUB_CHANNEL, "name": "Channel", "request": False},
+        {"id": FORCE_SUB_CHANNEL2, "name": "Channel", "request": False},
+        {"id": FORCE_SUB_CHANNEL3, "name": "Channel", "request": True}
     ]
-    try:
+
+    buttons = []
+    not_joined = False
+
+    for channel in force_sub_channels:
+        try:
+            # Create appropriate invite link
+            if channel["request"]:
+                invite = await client.create_chat_invite_link(
+                    chat_id=channel["id"],
+                    creates_join_request=True
+                )
+                link = invite.invite_link
+                btn_text = "Request to Join"
+            else:
+                chat = await client.get_chat(channel["id"])
+                link = chat.invite_link
+                btn_text = "Join Channel"
+
+            # Check user status
+            member = await client.get_chat_member(channel["id"], message.from_user.id)
+            if member.status in ["member", "administrator", "owner"]:
+                continue  # User is already member
+                
+            not_joined = True
+            buttons.append([InlineKeyboardButton(f"{btn_text} {channel['name']}", url=link)])
+
+        except Exception as e:
+            print(f"Error checking channel {channel['id']}: {e}")
+            continue
+
+    if not_joined:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text='Tʀʏ Aɢᴀɪɴ',
+                    text="Try Again",
                     url=f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
         )
-    except IndexError:
-        pass
-
-    await message.reply_photo(
-    photo=FORCE_PIC, 
-    caption=FORCE_MSG.format(
-        first=message.from_user.first_name,
-        last=message.from_user.last_name,
-        username=None if not message.from_user.username else '@' + message.from_user.username,
-        mention=message.from_user.mention,
-        id=message.from_user.id
-    ),
-    reply_markup=InlineKeyboardMarkup(buttons)
-)
+        
+        await message.reply_photo(
+            photo=FORCE_PIC,
+            caption=FORCE_MSG.format(
+                first=message.from_user.first_name,
+                last=message.from_user.last_name,
+                username=None if not message.from_user.username else '@' + message.from_user.username,
+                mention=message.from_user.mention,
+                id=message.from_user.id
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            quote=True
+        )
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
