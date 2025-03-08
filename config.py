@@ -25,7 +25,7 @@ DB_NAME = os.environ.get("DATABASE_NAME", "Paid")
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@Fire_Force_in_Hindi0")
 FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@solo_leveling_reawakening_hindi0")
-FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@solo_leveling_reawakening_hindi0")
+FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "-1002426113388")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
