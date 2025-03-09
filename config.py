@@ -25,7 +25,7 @@ DB_NAME = os.environ.get("DATABASE_NAME", "Diablo")
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNELS = [
     chan_id.strip() for chan_id in 
-    os.environ.get("FORCE_SUB_CHANNELS", "-1002152715889,@GenAnimeOfc,-1002470117956,-1002443660843").split(",")
+    os.environ.get("FORCE_SUB_CHANNELS", "@GenAnimeOfc,@Pirate_Flick_Completed,@pirate_flick").split(",")
     if chan_id.strip()
 ]
 
