@@ -114,39 +114,44 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    buttons = [
-        [
-            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ", url=client.invitelink2),
-            InlineKeyboardButton(text="GᴇɴAɴɪᴍᴇ [ʙᴀᴄᴋᴜᴘ]", url=client.invitelink),
-        ],
-        [
-            InlineKeyboardButton(text="Cʀᴜɴᴄʜʏʀᴏʟʟ Aɴɪᴍᴇ Iɴᴅɪᴀ", url=client.invitelink3),
-            #InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
-        ]
-    ]
+    if await subscribed(client, message):
+        await start_command(client, message)
+        return
+    
+    buttons = []
+    row = []
+    # Create buttons dynamically
+    for i, channel in enumerate(FORCE_SUB_CHANNELS, 1):
+        try:
+            invite_link = await client.export_chat_invite_link(channel)
+            row.append(InlineKeyboardButton(f"JJᴏɪɴ Cʜᴀɴɴᴇʟ {i}", url=invite_link))
+            if len(row) == 2:  # 2 buttons per row
+                buttons.append(row)
+                row = []
+        except Exception as e:
+            print(f"Error getting invite link for {channel}: {e}")
+    
+    if row:  # Add remaining buttons if any
+        buttons.append(row)
+    
+    # Add Try Again button
     try:
-        buttons.append(
-            [
-                InlineKeyboardButton(
-                    text='Tʀʏ Aɢᴀɪɴ',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
-                )
-            ]
-        )
+        parameter = message.command[1]
+        buttons.append([InlineKeyboardButton("Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{client.username}?start={parameter}")])
     except IndexError:
-        pass
-
+        buttons.append([InlineKeyboardButton("Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{client.username}?start")])
+    
     await message.reply_photo(
-    photo=FORCE_PIC, 
-    caption=FORCE_MSG.format(
-        first=message.from_user.first_name,
-        last=message.from_user.last_name,
-        username=None if not message.from_user.username else '@' + message.from_user.username,
-        mention=message.from_user.mention,
-        id=message.from_user.id
-    ),
-    reply_markup=InlineKeyboardMarkup(buttons)
-)
+        photo=FORCE_PIC,
+        caption=FORCE_MSG.format(
+            first=message.from_user.first_name,
+            last=message.from_user.last_name,
+            username=message.from_user.username,
+            mention=message.from_user.mention,
+            id=message.from_user.id
+        ),
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
