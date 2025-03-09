@@ -11,7 +11,7 @@ APP_ID = int(os.environ.get("APP_ID", "17417255"))
 #Your API Hash from my.telegram.org
 API_HASH = os.environ.get("API_HASH", "73d424d9847f968130cd5b41946f7a5d")
 #Your db channel Id
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@BatchBotLog")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "-1002397268658")
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "DARKXSIDE78")
 #OWNER ID
@@ -23,9 +23,10 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKX
 DB_NAME = os.environ.get("DATABASE_NAME", "Diablo")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "@GenAnimeHindi")
+FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "-1002152715889")
 FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@GenAnimeOfc")
-FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "@Crunchyroll_Anime_India")
+FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "-1002470117956")
+FORCE_SUB_CHANNEL4 = os.environ.get("FORCE_SUB_CHANNEL4", "-1002443660843")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
