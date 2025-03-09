@@ -23,10 +23,15 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKX
 DB_NAME = os.environ.get("DATABASE_NAME", "Diablo")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "-1002152715889")
-FORCE_SUB_CHANNEL2 = os.environ.get("FORCE_SUB_CHANNEL2", "@GenAnimeOfc")
-FORCE_SUB_CHANNEL3 = os.environ.get("FORCE_SUB_CHANNEL3", "-1002470117956")
-FORCE_SUB_CHANNEL4 = os.environ.get("FORCE_SUB_CHANNEL4", "-1002443660843")
+FORCE_SUB_CHANNELS = [
+    chan_id.strip() for chan_id in 
+    os.environ.get("FORCE_SUB_CHANNELS", "-1002152715889,@GenAnimeOfc,-1002470117956,-1002443660843").split(",")
+    if chan_id.strip()
+]
+
+BLOCKED_USERS = set()
+ACTIVE_USERS = set()
+FILES_UPLOADED = 0
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
