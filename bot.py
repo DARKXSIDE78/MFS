@@ -2,10 +2,11 @@ from aiohttp import web
 from plugins import web_server
 import pyromod.listen
 from pyrogram import Client
-from pyrogram.enums import ParseMode
+from pyrogram.enums import ParseMode, ChatMemberStatus
 import sys
 from datetime import datetime
 from config import *
+import logging
 
 class Bot(Client):
     def __init__(self):
@@ -17,47 +18,75 @@ class Bot(Client):
             workers=TG_BOT_WORKERS,
             bot_token=TG_BOT_TOKEN
         )
-        self.LOGGER = LOGGER
-        self.invitelinks = {}  # Store invite links by channel
+        self.logger = LOGGER(__name__)
+        self.invitelinks = {}  # Store invite links by username/ID
         self.uptime = None
+        self.FORCE_SUB_CHANNELS = []
+
+    async def resolve_channel(self, channel_ref):
+        """Resolve channel reference to Chat object"""
+        try:
+            # Try as username first
+            if isinstance(channel_ref, str) and channel_ref.startswith("@"):
+                return await self.get_chat(channel_ref)
+            # Try as integer ID
+            return await self.get_chat(int(channel_ref))
+        except ValueError:
+            # Handle negative IDs stored as strings
+            return await self.get_chat(int(channel_ref))
 
     async def start(self):
         await super().start()
-        usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
+        bot_info = await self.get_me()
+        self.logger.info(f"Starting bot @{bot_info.username}")
 
-        # Initialize force sub channels
-        self.FORCE_SUB_CHANNELS = []
-        for channel in FORCE_SUB_CHANNELS:
-            if channel:
+        try:
+            # Initialize force sub channels
+            for channel_ref in FORCE_SUB_CHANNELS:
                 try:
-                    chat = await self.get_chat(channel)
+                    chat = await self.resolve_channel(channel_ref)
+                    
+                    # Check if bot is admin with invite permissions
+                    bot_member = await self.get_chat_member(chat.id, bot_info.id)
+                    if not bot_member.privileges.can_invite_users:
+                        raise Exception(f"Bot is not admin in {chat.title} or lacks invite permissions")
+
+                    # Create invite link if needed
                     if not chat.invite_link:
-                        await self.export_chat_invite_link(channel.id)
-                        chat = await self.get_chat(channel)
-                    self.invitelinks[channel] = chat.invite_link
-                    self.FORCE_SUB_CHANNELS.append(channel)
+                        self.logger.info(f"Creating invite link for {chat.title}")
+                        await self.export_chat_invite_link(chat.id)
+                        chat = await self.resolve_channel(channel_ref)  # Refresh chat info
+
+                    self.invitelinks[channel_ref] = chat.invite_link
+                    self.FORCE_SUB_CHANNELS.append(channel_ref)
+                    self.logger.info(f"Initialized channel: {chat.title} ({channel_ref})")
+
                 except Exception as e:
-                    self.LOGGER.error(f"Error initializing channel {channel}: {e}")
+                    self.logger.error(f"Failed to initialize channel {channel_ref}: {str(e)}")
                     sys.exit(1)
 
-        # Database channel check
-        try:
-            self.db_channel = await self.get_chat(CHANNEL_ID)
-            test = await self.send_message(chat_id=self.db_channel.id, text="Test Message")
-            await test.delete()
+            # Initialize database channel
+            db_chat = await self.resolve_channel(CHANNEL_ID)
+            self.db_channel = db_chat
+            test_msg = await self.send_message(db_chat.id, "📁 Database connection test")
+            await test_msg.delete()
+            self.logger.info(f"Database channel set to: {db_chat.title}")
+
+            # Start web server
+            app = web.AppRunner(await web_server())
+            await app.setup()
+            await web.TCPSite(app, "0.0.0.0", PORT).start()
+            self.logger.info(f"Web server started on port {PORT}")
+
+            self.logger.info("Bot started successfully!")
+            self.username = bot_info.username
+
         except Exception as e:
-            self.LOGGER.error(f"Database channel error: {e}")
+            self.logger.error(f"Startup failed: {str(e)}")
+            await self.stop()
             sys.exit(1)
-
-        # Web server setup
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        await web.TCPSite(app, "0.0.0.0", PORT).start()
-
-        self.LOGGER.info("Bot Started Successfully!")
-        self.username = usr_bot_me.username
 
     async def stop(self, *args):
         await super().stop()
-        self.LOGGER.info("Bot Stopped Successfully!")
+        self.logger.info("Bot stopped successfully")
