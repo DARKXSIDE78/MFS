@@ -7,7 +7,7 @@ from bot import Bot
 from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON, OWNER_ID
 from helper_func import encode
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink','stats','restart','id']))
+@Bot.on_message(filters.private & filters.user(ADMINS) & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink','stats','restart','id','add_admin','remove_admin','add_fsub','remove_fsub','admins','fsub','setdeletetimer']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Pʟᴇᴀsᴇ Wᴀɪᴛ...!", quote = True)
     try:
@@ -23,7 +23,7 @@ async def channel_post(client: Client, message: Message):
     string = f"get-{converted_id}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
-
+    FILES_UPLOADED += 1  # Update stats counter
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Sʜᴀʀᴇ Uʀʟ", url=f'https://telegram.me/share/url?url={link}')]])
 
     await reply_text.edit(f"<b>Uᴘʟᴏᴀᴅᴇᴅ Sᴜᴄᴄᴇssꜰᴜʟʟʏ</b>\n\n</b>Sʜᴀʀᴇᴀʙʟᴇ Lɪɴᴋ﹕</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
@@ -42,6 +42,7 @@ async def new_post(client: Client, message: Message):
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Sʜᴀʀᴇ Uʀʟ", url=f'https://telegram.me/share/url?url={link}')]])
+    FILES_UPLOADED += 1  # Update stats counter
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
