@@ -124,7 +124,7 @@ async def not_joined(client: Client, message: Message):
     for i, channel in enumerate(FORCE_SUB_CHANNELS, 1):
         try:
             invite_link = await client.export_chat_invite_link(channel)
-            row.append(InlineKeyboardButton(f"JJᴏɪɴ Cʜᴀɴɴᴇʟ {i}", url=invite_link))
+            row.append(InlineKeyboardButton(f"Jᴏɪɴ Cʜᴀɴɴᴇʟ {i}", url=invite_link))
             if len(row) == 2:  # 2 buttons per row
                 buttons.append(row)
                 row = []
