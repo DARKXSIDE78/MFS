@@ -5,27 +5,27 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7525160133:AAERBaTODFGERAEKw_pI07Li1qLBram1c78")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7776271794:AAFe2FTFlD55yFNzyP2xJIB9KV8OpG_QRg8")
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "17417255"))
 #Your API Hash from my.telegram.org
 API_HASH = os.environ.get("API_HASH", "73d424d9847f968130cd5b41946f7a5d")
 #Your db channel Id
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@BatchBotLog")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "-1002311297760")
 # NAMA OWNER
-OWNER = os.environ.get("OWNER", "DARKXSIDE78")
+OWNER = os.environ.get("OWNER", "Jas_Mehra")
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "7086472788"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6039119180"))
 #Port
 PORT = os.environ.get("PORT", "8000")
 #Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKXSIDE78@cluster0.wdive.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "Diablo")
+DB_NAME = os.environ.get("DATABASE_NAME", "JAS")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNELS = [
     chan_id.strip() for chan_id in 
-    os.environ.get("FORCE_SUB_CHANNELS", "@GenAnimeOfc,@Pirate_Flick_Completed,@pirate_flick").split(",")
+    os.environ.get("FORCE_SUB_CHANNELS", "").split(",")
     if chan_id.strip()
 ]
 
@@ -37,11 +37,11 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "7200")) # auto delete in seconds
 
-START_PIC = os.environ.get("START_PIC", "https://wallpapercave.com/wp/wp8857100.png")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://wallpapercave.com/wp/wp8857060.jpg")
+START_PIC = os.environ.get("START_PIC", "https://preview.redd.it/i-improved-the-anime-version-of-yuki-a-little-i-think-shes-v0-pia08yh3wecd1.png?width=2556&format=png&auto=webp&s=26e426a5917175a671742d278a3a324e859ccf28")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://preview.redd.it/i-improved-the-anime-version-of-yuki-a-little-i-think-shes-v0-pia08yh3wecd1.png?width=2556&format=png&auto=webp&s=26e426a5917175a671742d278a3a324e859ccf28")
 
 #start messages
-START_MSG = os.environ.get("START_MESSAGE", "<b>ғᴏᴏʟɪsʜ ᴍᴏʀᴛᴀʟ!!! [{first}]\nʏᴏᴜ sᴛᴀɴᴅ ɪɴ ᴛʜᴇ ᴘʀᴇsᴇɴᴄᴇ ᴏғ ᴛʜᴇ Dᴇᴍᴏɴ Lᴏʀᴅ, ᴛʜᴇ ᴏɴᴇ ᴡʜᴏ sᴇʀᴠᴇs ᴛʜᴇ ᴀʟᴍɪɢʜᴛʏ Mᴀsᴛᴇʀ <a href='t.me/darkxside78'>DARKXSIDE</a>. ʜɪs ᴡɪʟʟ ɪs ᴀʙsᴏʟᴜᴛᴇ, ʜɪs ᴅᴏᴍɪɴɪᴏɴ ᴜɴǫᴜᴇsᴛɪᴏɴᴀʙʟᴇ.\nɪ ᴀᴍ ᴛʜᴇ ᴏɴᴇ ᴇɴᴛʀᴜsᴛᴇᴅ ᴡɪᴛʜ ʜɪs sᴀᴄʀᴇᴅ ᴀʀᴄʜɪᴠᴇs, ᴛʜᴇ ᴋᴇᴇᴘᴇʀ ᴏғ ʜɪs ғᴏʀʙɪᴅᴅᴇɴ ᴋɴᴏᴡʟᴇᴅɢᴇ. ʏᴏᴜ sʜᴀʟʟ ɴᴏᴛ ʟᴀʏ ʜᴀɴᴅs ᴜᴘᴏɴ ᴡʜᴀᴛ ɪs ʜɪs ᴜɴʟᴇss ᴍʏ ᴍᴀsᴛᴇʀ ʙᴇsᴛᴏᴡs ᴜᴘᴏɴ ʏᴏᴜ ᴛʜᴇ ᴅɪᴠɪɴᴇ sᴘᴇʟʟ—ʜɪs sᴀᴄʀᴇᴅ ʟɪɴᴋs.\n\nᴋɴᴇᴇʟ, ᴏʙᴇʏ, ᴀɴᴅ ᴀᴡᴀɪᴛ ʜɪs ᴄᴏᴍᴍᴀɴᴅ.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>HELLO!!! [{first}]\nI am a file store bot. Created By <a href='t.me/jas_mehra'>Jas-Mehra</a>.</b>")
 try:
     ADMINS=[6376328008]
     for x in (os.environ.get("ADMINS", "6302971969").split()):
