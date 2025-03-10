@@ -9,7 +9,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text = (
-    "<b>○ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/Darkxside78'>DARKXSIDE78</a>\n"
     "<b>○ Oᴡɴᴇʀ: <a href='https://t.me/jas_mehra'>Jᴀs Mᴇʜʀᴀ</a>\n"
     "○ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/downloads/'>Pʏᴛʜᴏɴ</a>\n"
     "○ Lɪʙʀᴀʀʏ: <a href='https://github.com/pyrogram/pyrogram'>Pʏʀᴏɢʀᴀᴍ</a>\n"
@@ -29,7 +28,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⚡️ Dᴏᴍᴀɪɴ", url= "https://t.me/nova_x_anime"),
+                        InlineKeyboardButton("⚡️ Dᴏᴍᴀɪɴ", url= "https://t.me/Anime_x_Nova"),
                     ],
                     [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
