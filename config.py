@@ -41,7 +41,7 @@ START_PIC = os.environ.get("START_PIC", "https://preview.redd.it/i-improved-the-
 FORCE_PIC = os.environ.get("FORCE_PIC", "https://preview.redd.it/i-improved-the-anime-version-of-yuki-a-little-i-think-shes-v0-pia08yh3wecd1.png?width=2556&format=png&auto=webp&s=26e426a5917175a671742d278a3a324e859ccf28")
 
 #start messages
-START_MSG = os.environ.get("START_MESSAGE", "<b>HELLO!!! [{first}]\nI am a file store bot. Created By <a href='t.me/jas_mehra'>Jas-Mehra</a>.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Yᴏᴋᴏsᴏ! [{first}]\nɪ ᴀᴍ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/jas_mehra'>Jᴀs-Mᴇʜʀᴀ</a>.</b>")
 try:
     ADMINS=[6376328008]
     for x in (os.environ.get("ADMINS", "6302971969").split()):
