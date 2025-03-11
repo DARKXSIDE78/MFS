@@ -5,22 +5,22 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7776271794:AAFe2FTFlD55yFNzyP2xJIB9KV8OpG_QRg8")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7091109292:AAGVeX5BIEzxKLyWz-iIKs-kYd6ZFAMkchk")
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "17417255"))
 #Your API Hash from my.telegram.org
 API_HASH = os.environ.get("API_HASH", "73d424d9847f968130cd5b41946f7a5d")
 #Your db channel Id
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "-1002311297760")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "-1002348914478")
 # NAMA OWNER
-OWNER = os.environ.get("OWNER", "Jas_Mehra")
+OWNER = os.environ.get("OWNER", "DARKXSIDE78")
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "6039119180"))
 #Port
 PORT = os.environ.get("PORT", "8000")
 #Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKXSIDE78@cluster0.wdive.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "JAS")
+DB_NAME = os.environ.get("DATABASE_NAME", "PirateAutoAnime")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNELS = [
@@ -35,13 +35,13 @@ FILES_UPLOADED = 0
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
-FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "7200")) # auto delete in seconds
+FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "1600")) # auto delete in seconds
 
-START_PIC = os.environ.get("START_PIC", "https://preview.redd.it/i-improved-the-anime-version-of-yuki-a-little-i-think-shes-v0-pia08yh3wecd1.png?width=2556&format=png&auto=webp&s=26e426a5917175a671742d278a3a324e859ccf28")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://preview.redd.it/i-improved-the-anime-version-of-yuki-a-little-i-think-shes-v0-pia08yh3wecd1.png?width=2556&format=png&auto=webp&s=26e426a5917175a671742d278a3a324e859ccf28")
+START_PIC = os.environ.get("START_PIC", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJIlnX3NgZKMLrKER8AogHGy_lAFQ4xj_dig&s")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu7BkhIgEktHKikOKaTY1Qh4IUpzxaWkox0A&s")
 
 #start messages
-START_MSG = os.environ.get("START_MESSAGE", "<b>Yᴏᴋᴏsᴏ! [{first}]\nɪ ᴀᴍ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/jas_mehra'>Jᴀs-Mᴇʜʀᴀ</a>.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ, [{first}]\nɪ ᴀᴍ Sᴀsᴜᴋᴇ Uᴄʜɪʜᴀ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/darkxside78'>ᴅᴀʀᴋxsɪᴅᴇ</a>.</b>")
 try:
     ADMINS=[6376328008]
     for x in (os.environ.get("ADMINS", "6302971969").split()):
@@ -50,7 +50,7 @@ except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>{first}...\nʏᴏᴜ sᴛᴀɴᴅ ʙᴇғᴏʀᴇ ᴘᴏᴡᴇʀ ʙᴇʏᴏɴᴅ ᴄᴏᴍᴘʀᴇʜᴇɴsɪᴏɴ.\nᴊᴏɪɴ ᴍʏ ʟᴏʀᴅ’s ᴄʜᴀɴɴᴇʟ. ɪᴛ ɪs ɴᴏᴛ ᴀ ʀᴇǫᴜᴇsᴛ. ɪᴛ ɪs ᴀɴ ᴏʀᴅᴇʀ...</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>{first}...\nʏᴏᴜ sᴛᴀɴᴅ ʙᴇғᴏʀᴇ ᴘᴏᴡᴇʀ ʙᴇʏᴏɴᴅ ᴄᴏᴍᴘʀᴇʜᴇɴsɪᴏɴ.\nᴊᴏɪɴ ᴍʏ ʟᴏʀᴅ’s ᴄʜᴀɴɴᴇʟ...</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
