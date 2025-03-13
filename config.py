@@ -37,8 +37,8 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "1600")) # auto delete in seconds
 
-START_PIC = os.environ.get("START_PIC", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJIlnX3NgZKMLrKER8AogHGy_lAFQ4xj_dig&s")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu7BkhIgEktHKikOKaTY1Qh4IUpzxaWkox0A&s")
+START_PIC = os.environ.get("START_PIC", "https://static.zerochan.net/Alisa.Mikhailova.Kujou.full.3715007.jpg")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://www.pinkvilla.com/images/2024-07/769804251_alya-sometimes-hides-her-feelings-in-russian-episode-2-alya-1.jpg")
 
 #start messages
 START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ, [{first}]\nɪ ᴀᴍ Sᴀsᴜᴋᴇ Uᴄʜɪʜᴀ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/darkxside78'>ᴅᴀʀᴋxsɪᴅᴇ</a>.</b>")
