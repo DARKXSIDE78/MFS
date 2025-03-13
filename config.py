@@ -41,7 +41,7 @@ START_PIC = os.environ.get("START_PIC", "https://static.zerochan.net/Alisa.Mikha
 FORCE_PIC = os.environ.get("FORCE_PIC", "https://www.pinkvilla.com/images/2024-07/769804251_alya-sometimes-hides-her-feelings-in-russian-episode-2-alya-1.jpg")
 
 #start messages
-START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ, [{first}]\nɪ ᴀᴍ Sᴀsᴜᴋᴇ Uᴄʜɪʜᴀ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/darkxside78'>ᴅᴀʀᴋxsɪᴅᴇ</a>.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ, [{first}]\nɪ ᴀᴍ Aʟɪsᴀ.\n\nCʀᴇᴀᴛᴏʀ: <a href='t.me/darkxside78'>ᴅᴀʀᴋxsɪᴅᴇ</a>.</b>")
 try:
     ADMINS=[6376328008]
     for x in (os.environ.get("ADMINS", "6302971969").split()):
