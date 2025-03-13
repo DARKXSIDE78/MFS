@@ -90,8 +90,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡️ ᴅᴏᴍᴀɪɴ", url = "t.me/Anime_x_Nova"),
-                    InlineKeyboardButton("🍁 ᴅᴏᴍᴀɪɴ", url = "t.me/Nova_Networks")
+                    InlineKeyboardButton("⚡️ ᴅᴏᴍᴀɪɴ", url = "t.me/GenHAnime"),
+                    InlineKeyboardButton("🍁 ᴅᴏᴍᴀɪɴ", url = "https://t.me/+GgvwuDc4ZvthNzE1")
                 ],
                 [
                     InlineKeyboardButton("🛈 ᴀʙᴏᴜᴛ", callback_data = "about"),
