@@ -5,13 +5,13 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7091109292:AAGVeX5BIEzxKLyWz-iIKs-kYd6ZFAMkchk")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7725472827:AAEJQp8WSnc27TMDXuHxv_LgliZwT7tC2O4")
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "17417255"))
 #Your API Hash from my.telegram.org
 API_HASH = os.environ.get("API_HASH", "73d424d9847f968130cd5b41946f7a5d")
 #Your db channel Id
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@GenAnimeOngoingCloud")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "@BatchBotLog")
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "DARKXSIDE78")
 #OWNER ID
@@ -20,7 +20,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "6039119180"))
 PORT = os.environ.get("PORT", "8000")
 #Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nitinkumardhundhara:DARKXSIDE78@cluster0.wdive.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "PirateAutoAnime")
+DB_NAME = os.environ.get("DATABASE_NAME", "AlisaHentaiBot")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNELS = [
