@@ -4,7 +4,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 
 from bot import Bot
-from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON, OWNER_ID
+from config import *
 from helper_func import encode
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink','stats','restart','id','add_admin','remove_admin','add_fsub','remove_fsub','admins','fsub','setdeletetimer']))
